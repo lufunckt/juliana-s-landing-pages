@@ -1,18 +1,18 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SectionLanding } from "@/components/section-landing";
+import { VisibilidadePage } from "@/components/landings/visibilidade-page";
 import { getSection } from "@/lib/sections";
 
-const section = getSection("visibilidade-natural")!;
+const s = getSection("visibilidade-natural")!;
 
 export const Route = createFileRoute("/visibilidade-natural")({
   head: () => ({
     meta: [
-      { title: `${section.title} — Juliana Grimaldi` },
-      { name: "description", content: section.shortDesc },
-      { property: "og:title", content: `${section.title} — Juliana Grimaldi` },
-      { property: "og:description", content: section.shortDesc },
+      { title: `${s.title} — Juliana Grimaldi` },
+      { name: "description", content: s.shortDesc },
+      { property: "og:title", content: `${s.title} — Juliana Grimaldi` },
+      { property: "og:description", content: s.shortDesc },
     ],
     links: [{ rel: "canonical", href: "/visibilidade-natural" }],
   }),
-  component: () => <SectionLanding section={section} />,
+  component: VisibilidadePage,
 });

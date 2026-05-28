@@ -1,18 +1,18 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SectionLanding } from "@/components/section-landing";
+import { ProtagonismoPage } from "@/components/landings/protagonismo-page";
 import { getSection } from "@/lib/sections";
 
-const section = getSection("protagonismo-profissional")!;
+const s = getSection("protagonismo-profissional")!;
 
 export const Route = createFileRoute("/protagonismo-profissional")({
   head: () => ({
     meta: [
-      { title: `${section.title} — Juliana Grimaldi` },
-      { name: "description", content: section.shortDesc },
-      { property: "og:title", content: `${section.title} — Juliana Grimaldi` },
-      { property: "og:description", content: section.shortDesc },
+      { title: `${s.title} — Juliana Grimaldi` },
+      { name: "description", content: s.shortDesc },
+      { property: "og:title", content: `${s.title} — Juliana Grimaldi` },
+      { property: "og:description", content: s.shortDesc },
     ],
     links: [{ rel: "canonical", href: "/protagonismo-profissional" }],
   }),
-  component: () => <SectionLanding section={section} />,
+  component: ProtagonismoPage,
 });
