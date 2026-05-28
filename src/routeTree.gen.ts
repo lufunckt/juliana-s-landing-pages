@@ -9,8 +9,45 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as VisibilidadeNaturalRouteImport } from './routes/visibilidade-natural'
+import { Route as ProtagonismoProfissionalRouteImport } from './routes/protagonismo-profissional'
+import { Route as DiarioEmocionalRouteImport } from './routes/diario-emocional'
+import { Route as DiagnosticoEmocionalRouteImport } from './routes/diagnostico-emocional'
+import { Route as DesbloqueioEmocionalRouteImport } from './routes/desbloqueio-emocional'
+import { Route as AutonomiaInternaRouteImport } from './routes/autonomia-interna'
 import { Route as IndexRouteImport } from './routes/index'
 
+const VisibilidadeNaturalRoute = VisibilidadeNaturalRouteImport.update({
+  id: '/visibilidade-natural',
+  path: '/visibilidade-natural',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProtagonismoProfissionalRoute =
+  ProtagonismoProfissionalRouteImport.update({
+    id: '/protagonismo-profissional',
+    path: '/protagonismo-profissional',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const DiarioEmocionalRoute = DiarioEmocionalRouteImport.update({
+  id: '/diario-emocional',
+  path: '/diario-emocional',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DiagnosticoEmocionalRoute = DiagnosticoEmocionalRouteImport.update({
+  id: '/diagnostico-emocional',
+  path: '/diagnostico-emocional',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DesbloqueioEmocionalRoute = DesbloqueioEmocionalRouteImport.update({
+  id: '/desbloqueio-emocional',
+  path: '/desbloqueio-emocional',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AutonomiaInternaRoute = AutonomiaInternaRouteImport.update({
+  id: '/autonomia-interna',
+  path: '/autonomia-interna',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +56,116 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/autonomia-interna': typeof AutonomiaInternaRoute
+  '/desbloqueio-emocional': typeof DesbloqueioEmocionalRoute
+  '/diagnostico-emocional': typeof DiagnosticoEmocionalRoute
+  '/diario-emocional': typeof DiarioEmocionalRoute
+  '/protagonismo-profissional': typeof ProtagonismoProfissionalRoute
+  '/visibilidade-natural': typeof VisibilidadeNaturalRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/autonomia-interna': typeof AutonomiaInternaRoute
+  '/desbloqueio-emocional': typeof DesbloqueioEmocionalRoute
+  '/diagnostico-emocional': typeof DiagnosticoEmocionalRoute
+  '/diario-emocional': typeof DiarioEmocionalRoute
+  '/protagonismo-profissional': typeof ProtagonismoProfissionalRoute
+  '/visibilidade-natural': typeof VisibilidadeNaturalRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/autonomia-interna': typeof AutonomiaInternaRoute
+  '/desbloqueio-emocional': typeof DesbloqueioEmocionalRoute
+  '/diagnostico-emocional': typeof DiagnosticoEmocionalRoute
+  '/diario-emocional': typeof DiarioEmocionalRoute
+  '/protagonismo-profissional': typeof ProtagonismoProfissionalRoute
+  '/visibilidade-natural': typeof VisibilidadeNaturalRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/autonomia-interna'
+    | '/desbloqueio-emocional'
+    | '/diagnostico-emocional'
+    | '/diario-emocional'
+    | '/protagonismo-profissional'
+    | '/visibilidade-natural'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/autonomia-interna'
+    | '/desbloqueio-emocional'
+    | '/diagnostico-emocional'
+    | '/diario-emocional'
+    | '/protagonismo-profissional'
+    | '/visibilidade-natural'
+  id:
+    | '__root__'
+    | '/'
+    | '/autonomia-interna'
+    | '/desbloqueio-emocional'
+    | '/diagnostico-emocional'
+    | '/diario-emocional'
+    | '/protagonismo-profissional'
+    | '/visibilidade-natural'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AutonomiaInternaRoute: typeof AutonomiaInternaRoute
+  DesbloqueioEmocionalRoute: typeof DesbloqueioEmocionalRoute
+  DiagnosticoEmocionalRoute: typeof DiagnosticoEmocionalRoute
+  DiarioEmocionalRoute: typeof DiarioEmocionalRoute
+  ProtagonismoProfissionalRoute: typeof ProtagonismoProfissionalRoute
+  VisibilidadeNaturalRoute: typeof VisibilidadeNaturalRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/visibilidade-natural': {
+      id: '/visibilidade-natural'
+      path: '/visibilidade-natural'
+      fullPath: '/visibilidade-natural'
+      preLoaderRoute: typeof VisibilidadeNaturalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/protagonismo-profissional': {
+      id: '/protagonismo-profissional'
+      path: '/protagonismo-profissional'
+      fullPath: '/protagonismo-profissional'
+      preLoaderRoute: typeof ProtagonismoProfissionalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/diario-emocional': {
+      id: '/diario-emocional'
+      path: '/diario-emocional'
+      fullPath: '/diario-emocional'
+      preLoaderRoute: typeof DiarioEmocionalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/diagnostico-emocional': {
+      id: '/diagnostico-emocional'
+      path: '/diagnostico-emocional'
+      fullPath: '/diagnostico-emocional'
+      preLoaderRoute: typeof DiagnosticoEmocionalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/desbloqueio-emocional': {
+      id: '/desbloqueio-emocional'
+      path: '/desbloqueio-emocional'
+      fullPath: '/desbloqueio-emocional'
+      preLoaderRoute: typeof DesbloqueioEmocionalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/autonomia-interna': {
+      id: '/autonomia-interna'
+      path: '/autonomia-interna'
+      fullPath: '/autonomia-interna'
+      preLoaderRoute: typeof AutonomiaInternaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,17 +178,13 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AutonomiaInternaRoute: AutonomiaInternaRoute,
+  DesbloqueioEmocionalRoute: DesbloqueioEmocionalRoute,
+  DiagnosticoEmocionalRoute: DiagnosticoEmocionalRoute,
+  DiarioEmocionalRoute: DiarioEmocionalRoute,
+  ProtagonismoProfissionalRoute: ProtagonismoProfissionalRoute,
+  VisibilidadeNaturalRoute: VisibilidadeNaturalRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
