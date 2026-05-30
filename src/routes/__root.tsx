@@ -73,19 +73,49 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Juliana Grimaldi — Reestruturação Emocional na Raiz" },
+      {
+        name: "description",
+        content:
+          "Processos de reestruturação emocional baseados em neurociência para reprogramar, na raiz, padrões de autossabotagem na carreira, relacionamentos e dinheiro.",
+      },
+      { name: "author", content: "Juliana Grimaldi" },
+      { name: "robots", content: "index, follow, max-image-preview:large" },
+      { property: "og:title", content: "Juliana Grimaldi — Reestruturação Emocional na Raiz" },
+      {
+        property: "og:description",
+        content:
+          "Reprograme, na raiz, os padrões emocionais que travam sua carreira, seus relacionamentos e sua relação com dinheiro.",
+      },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { property: "og:locale", content: "pt_BR" },
+      { property: "og:site_name", content: "Juliana Grimaldi" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
+      },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Person",
+          name: "Juliana Grimaldi",
+          jobTitle: "Especialista em Reestruturação Emocional",
+          description:
+            "Especialista em reestruturação emocional baseada em neurociência comportamental.",
+          url: "/",
+          knowsAbout: [
+            "Neurociência comportamental",
+            "Reconsolidação de memória",
+            "Reestruturação emocional",
+            "Autoconhecimento",
+          ],
+        }),
       },
     ],
   }),
@@ -97,7 +127,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <head>
         <HeadContent />
       </head>
