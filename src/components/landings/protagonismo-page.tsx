@@ -1,135 +1,268 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, ArrowUpRight, Target, TrendingUp, Crown, Check } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 
 const wa = "https://wa.link/thno3v";
+
+const identificacao = [
+  "Você se cala para evitar julgamento.",
+  "Você recua quando deveria sustentar seu valor.",
+  "Você duvida de si, mesmo tendo competência.",
+  "Você sente que precisa provar o tempo todo que merece estar onde está.",
+];
+
+const impactos = [
+  "Seu posicionamento profissional.",
+  "Seus comportamentos sabotadores no ambiente corporativo.",
+  "Sua capacidade de tomar decisões.",
+  "Sua segurança para se expressar.",
+  "Sua forma de sustentar valor.",
+  "Seu crescimento e desenvolvimento profissional.",
+];
+
+const paraQuem = [
+  "Entrega muito, mas sente que cresce pouco.",
+  "Se cala para evitar julgamento.",
+  "Hesita quando precisa se posicionar.",
+  "Assume responsabilidades, mas não sustenta o próprio valor.",
+  "Sente insegurança diante de exposição, cobrança ou reconhecimento.",
+  "Tem comportamentos de autossabotagem no ambiente profissional.",
+  "Quer crescer na carreira sem continuar sendo conduzida pelo medo, pela culpa ou pela necessidade de aprovação.",
+];
+
+const resultados = [
+  "Mais clareza para decidir.",
+  "Mais firmeza para se posicionar.",
+  "Mais autonomia para ocupar espaço.",
+  "Mais segurança para sustentar seu próprio valor.",
+];
 
 export function ProtagonismoPage() {
   return (
     <main className="bg-background">
-      {/* HERO — executivo, denso, com KPI lateral */}
+      {/* HERO */}
       <section className="relative overflow-hidden bg-secondary text-white">
-        <div className="absolute inset-0 opacity-40 [background-image:radial-gradient(ellipse_at_top_right,oklch(0.74_0.13_180/0.5),transparent_55%),radial-gradient(circle_at_10%_80%,oklch(0.25_0.1_260/0.7),transparent_60%)]" />
-        <div className="absolute inset-y-0 left-1/2 hidden w-px bg-white/10 md:block" />
-        <div className="relative mx-auto grid max-w-6xl gap-16 px-6 py-24 md:grid-cols-2 md:py-32">
-          <div>
-            <Link to="/" className="text-xs font-semibold uppercase tracking-[0.25em] text-brand-teal hover:text-white">
-              ← Todos os processos
-            </Link>
-            <p className="mt-8 text-[11px] font-bold uppercase tracking-[0.3em] text-brand-teal">
-              Programa Premium · 6 sessões
-            </p>
-            <h1 className="mt-5 font-display text-5xl font-bold leading-[1.02] md:text-6xl">
-              Você entrega resultado. Só que <em className="not-italic text-brand-teal">sua carreira não acompanha</em>.
-            </h1>
-            <p className="mt-7 max-w-lg text-lg leading-relaxed text-white/75">
-              Protagonismo Profissional é um processo de reestruturação emocional para profissionais
-              de alto desempenho que querem parar de provar — e começar a ocupar.
-            </p>
-            <div className="mt-10 flex flex-wrap items-center gap-4">
-              <a href={wa} target="_blank" rel="noopener noreferrer"
-                 className="group inline-flex items-center gap-3 rounded-md bg-brand-teal px-7 py-4 text-sm font-bold uppercase tracking-wider shadow-[var(--shadow-glow)] hover:bg-brand-teal-dark transition-all">
-                Aplicar para o método
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </a>
-              <span className="text-xs uppercase tracking-wider text-white/60">Investimento: R$ 2.997</span>
-            </div>
+        <div className="absolute inset-0 opacity-60 [background-image:radial-gradient(ellipse_at_70%_30%,oklch(0.74_0.13_180/0.35),transparent_60%),radial-gradient(circle_at_15%_85%,oklch(0.3_0.09_215/0.55),transparent_60%)]" />
+        <div className="relative mx-auto max-w-6xl px-6 py-24 md:py-32">
+          <Link to="/" className="text-xs font-semibold uppercase tracking-[0.25em] text-brand-teal hover:text-white">
+            ← Todos os processos
+          </Link>
+          <p className="mt-10 text-[11px] font-bold uppercase tracking-[0.3em] text-brand-teal">
+            Atualização de Memórias · 10 encontros
+          </p>
+          <h1 className="mt-5 max-w-4xl text-5xl font-extrabold leading-[1.05] md:text-6xl lg:text-7xl">
+            Protagonismo Profissional
+          </h1>
+          <p className="mt-8 max-w-3xl text-xl leading-relaxed text-white/85 md:text-2xl">
+            Você não trava na carreira por falta de competência.
+          </p>
+          <p className="mt-4 max-w-3xl text-base leading-relaxed text-white/70 md:text-lg">
+            Trava porque seu cérebro ainda opera em padrões emocionais que geram insegurança,
+            hesitação e autossabotagem.
+          </p>
+          <p className="mt-6 max-w-3xl text-sm leading-relaxed text-white/60 md:text-base">
+            Um processo em 10 encontros, com sessões de até 1h30, para identificar e atualizar as
+            memórias emocionais que impactam seu posicionamento, seus comportamentos no ambiente
+            corporativo, suas decisões e seu crescimento profissional.
+          </p>
+          <div className="mt-10 flex flex-wrap items-center gap-4">
+            <a
+              href={wa}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 rounded-md bg-brand-teal px-7 py-4 text-sm font-bold uppercase tracking-wider text-white shadow-[var(--shadow-glow)] transition-all hover:bg-brand-teal-dark"
+            >
+              Ver Método: R$ 2.997 <ArrowRight className="h-4 w-4" />
+            </a>
+            <a
+              href={wa}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-md border border-white/30 px-7 py-4 text-sm font-bold uppercase tracking-wider hover:bg-white/10"
+            >
+              Falar com a equipe
+            </a>
           </div>
-          <div className="relative flex flex-col justify-center gap-4">
+        </div>
+      </section>
+
+      {/* IDENTIFICAÇÃO */}
+      <section className="mx-auto max-w-5xl px-6 py-24">
+        <p className="text-xs font-bold uppercase tracking-[0.25em] text-brand-teal">Identificação</p>
+        <h2 className="mt-4 max-w-3xl text-4xl font-bold leading-tight text-secondary md:text-5xl">
+          Você entrega muito, mas sente que cresce pouco.
+        </h2>
+        <div className="mt-10 space-y-5 text-lg leading-relaxed text-foreground/80">
+          <p>Você assume responsabilidades, resolve problemas e sustenta demandas importantes.</p>
+          <p>Mas, quando precisa se posicionar, algo dentro de você hesita.</p>
+        </div>
+        <ul className="mt-10 grid gap-4 md:grid-cols-2">
+          {identificacao.map((i) => (
+            <li
+              key={i}
+              className="rounded-xl border border-border bg-card p-5 text-foreground/80 shadow-[var(--shadow-card)]"
+            >
+              {i}
+            </li>
+          ))}
+        </ul>
+        <div className="mt-12 border-l-2 border-brand-teal pl-6">
+          <p className="text-lg text-foreground/80">
+            Você carrega responsabilidades, mas não consegue sustentar a própria potência profissional.
+          </p>
+          <p className="mt-4 text-lg font-semibold text-secondary">
+            Isso não é falta de capacidade. É um padrão emocional operando no automático.
+          </p>
+        </div>
+      </section>
+
+      {/* APROFUNDAMENTO */}
+      <section className="bg-secondary py-24 text-white">
+        <div className="mx-auto max-w-5xl px-6">
+          <p className="text-xs font-bold uppercase tracking-[0.25em] text-brand-teal">Aprofundamento</p>
+          <h2 className="mt-4 max-w-3xl text-4xl font-bold leading-tight md:text-5xl">
+            Sua carreira não pode continuar limitada por padrões emocionais que fazem você diminuir
+            a própria potência.
+          </h2>
+          <div className="mt-10 space-y-5 text-lg leading-relaxed text-white/75">
+            <p>
+              Muitas vezes, o que trava o crescimento profissional não é ausência de preparo,
+              conhecimento ou experiência.
+            </p>
+            <p>
+              É a forma como o cérebro aprendeu a responder diante de exposição, cobrança,
+              autoridade, julgamento, reconhecimento e risco.
+            </p>
+            <p>
+              Quando essas situações ativam memórias emocionais antigas, o comportamento pode se
+              tornar automático.
+            </p>
+          </div>
+          <div className="mt-12 grid gap-3 md:grid-cols-5">
             {[
-              { kpi: "73%", label: "dos profissionais de alta performance operam abaixo do potencial percebido" },
-              { kpi: "8x", label: "mais decisões assertivas após reconsolidação de memórias emocionais" },
-              { kpi: "0", label: "necessidade de aprovação como motor primário de ação" },
+              "Você hesita.",
+              "Você se esconde.",
+              "Você evita conflitos.",
+              "Não se posiciona com firmeza.",
+              "Não ocupa o espaço proporcional ao seu valor.",
             ].map((s) => (
-              <div key={s.kpi} className="flex items-baseline gap-5 border-l-2 border-brand-teal pl-5">
-                <span className="font-display text-5xl font-bold text-brand-teal">{s.kpi}</span>
-                <p className="text-sm text-white/70">{s.label}</p>
+              <div
+                key={s}
+                className="rounded-lg border border-white/15 bg-white/5 p-5 text-sm text-white/85"
+              >
+                {s}
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* DIAGNÓSTICO — 3 dores em formato tabela */}
+      {/* MÉTODO */}
       <section className="mx-auto max-w-5xl px-6 py-24">
-        <p className="text-xs font-bold uppercase tracking-[0.25em] text-brand-teal">O sintoma na superfície</p>
-        <h2 className="mt-4 max-w-3xl font-display text-4xl font-bold leading-tight text-secondary">
-          Você não está estagnada. Está operando em <span className="italic text-brand-teal">loop de proteção</span>.
+        <p className="text-xs font-bold uppercase tracking-[0.25em] text-brand-teal">O Método</p>
+        <h2 className="mt-4 max-w-3xl text-4xl font-bold leading-tight text-secondary md:text-5xl">
+          10 encontros. Sessões de até 1h30. Atuação na raiz.
         </h2>
-        <div className="mt-14 divide-y divide-border border-y border-border">
-          {[
-            ["Trava no posicionamento", "Reuniões viram revisão mental. Você fala depois — pensando: 'devia ter dito'."],
-            ["Auto-exigência crônica", "Resultado nunca é suficiente para silenciar a voz interna que cobra mais."],
-            ["Síndrome do impostor", "Conquistas viram coincidência. Erros viram identidade."],
-          ].map(([t, d]) => (
-            <div key={t} className="grid gap-2 py-6 md:grid-cols-[1fr_2fr] md:gap-12">
-              <h3 className="font-display text-xl font-semibold text-secondary">{t}</h3>
-              <p className="text-foreground/70">{d}</p>
+        <div className="mt-10 space-y-5 text-lg leading-relaxed text-foreground/80">
+          <p>
+            O Protagonismo Profissional é um processo realizado em 10 encontros, com sessões de até
+            1h30.
+          </p>
+          <p>
+            Através da neurociência e da reconsolidação de memórias, trabalhamos diretamente na raiz
+            dos padrões automáticos que fazem você recuar, se esconder ou não sustentar sua
+            potência profissional.
+          </p>
+        </div>
+        <div className="mt-12">
+          <p className="text-sm font-semibold text-secondary">
+            O processo é focado em identificar e atualizar memórias emocionais que impactam:
+          </p>
+          <ul className="mt-6 grid gap-4 md:grid-cols-2">
+            {impactos.map((i) => (
+              <li key={i} className="flex gap-3 rounded-xl bg-muted/60 p-5">
+                <Check className="mt-0.5 h-5 w-5 flex-shrink-0 text-brand-teal" />
+                <span className="text-foreground/85">{i}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* PARA QUEM É */}
+      <section className="bg-muted/40 py-24">
+        <div className="mx-auto max-w-5xl px-6">
+          <p className="text-xs font-bold uppercase tracking-[0.25em] text-brand-teal">Para quem é</p>
+          <h2 className="mt-4 text-4xl font-bold text-secondary md:text-5xl">
+            Esse processo é para você se:
+          </h2>
+          <ul className="mt-10 divide-y divide-border border-y border-border">
+            {paraQuem.map((p, i) => (
+              <li key={p} className="flex gap-6 py-5">
+                <span className="font-display text-sm font-bold text-brand-teal">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span className="text-foreground/85">{p}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* RESULTADO */}
+      <section className="mx-auto max-w-5xl px-6 py-24">
+        <p className="text-xs font-bold uppercase tracking-[0.25em] text-brand-teal">Resultado</p>
+        <h2 className="mt-4 max-w-3xl text-4xl font-bold leading-tight text-secondary md:text-5xl">
+          Quando a raiz emocional muda, sua postura começa a mudar também.
+        </h2>
+        <div className="mt-10 space-y-5 text-lg leading-relaxed text-foreground/80">
+          <p>O objetivo não é transformar você em outra pessoa.</p>
+          <p>
+            É permitir que você sustente, com mais consciência e segurança, a profissional que você
+            já é.
+          </p>
+        </div>
+        <div className="mt-10 grid gap-4 md:grid-cols-2">
+          {resultados.map((r) => (
+            <div
+              key={r}
+              className="rounded-xl border border-brand-teal/30 bg-card p-6 text-foreground/90 shadow-[var(--shadow-card)]"
+            >
+              {r}
             </div>
           ))}
         </div>
       </section>
 
-      {/* MÉTODO — timeline horizontal */}
+      {/* CTA FINAL */}
       <section className="bg-secondary py-24 text-white">
-        <div className="mx-auto max-w-6xl px-6">
-          <p className="text-xs font-bold uppercase tracking-[0.25em] text-brand-teal">O método aplicado à carreira</p>
-          <h2 className="mt-4 max-w-2xl font-display text-4xl font-bold">Três fases. Um novo sistema operacional.</h2>
-          <div className="relative mt-16 grid gap-10 md:grid-cols-3">
-            <div className="absolute top-7 left-[8%] right-[8%] hidden h-px bg-brand-teal/40 md:block" />
-            {[
-              { n: "01", t: "Mapeamento da Raiz", d: "Identificamos as memórias implícitas que sustentam o ciclo de autosabotagem profissional." , i: Target },
-              { n: "02", t: "Reconsolidação Neural", d: "Reorganizamos os circuitos emocionais para encerrar respostas automáticas de proteção." , i: TrendingUp },
-              { n: "03", t: "Ocupação do Espaço", d: "Você passa a se posicionar com autoridade orgânica. Sem performance, sem desgaste." , i: Crown },
-            ].map(({ n, t, d, i: Icon }) => (
-              <div key={n} className="relative">
-                <div className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full border-2 border-brand-teal bg-secondary">
-                  <Icon className="h-6 w-6 text-brand-teal" />
-                </div>
-                <p className="mt-6 text-xs font-bold tracking-widest text-brand-teal">FASE {n}</p>
-                <h3 className="mt-2 font-display text-2xl font-bold">{t}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-white/70">{d}</p>
-              </div>
-            ))}
+        <div className="mx-auto max-w-4xl px-6 text-center">
+          <h2 className="text-4xl font-bold leading-tight md:text-5xl">
+            Sua carreira não pode continuar limitada por padrões emocionais que fazem você diminuir
+            a própria potência.
+          </h2>
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-white/75">
+            Inicie o processo de Protagonismo Profissional e comece a atualizar as respostas
+            emocionais que impactam seu crescimento.
+          </p>
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <a
+              href={wa}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 rounded-md bg-brand-teal px-8 py-4 text-sm font-bold uppercase tracking-wider text-white shadow-[var(--shadow-glow)] transition-all hover:bg-brand-teal-dark"
+            >
+              Ver Método: R$ 2.997 <ArrowRight className="h-4 w-4" />
+            </a>
+            <a
+              href={wa}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-md border border-white/30 px-8 py-4 text-sm font-bold uppercase tracking-wider hover:bg-white/10"
+            >
+              Falar com a equipe
+            </a>
           </div>
         </div>
-      </section>
-
-      {/* RESULTADOS + INVESTIMENTO */}
-      <section className="mx-auto grid max-w-6xl gap-12 px-6 py-24 md:grid-cols-[1.3fr_1fr]">
-        <div>
-          <p className="text-xs font-bold uppercase tracking-[0.25em] text-brand-teal">O que muda</p>
-          <h2 className="mt-4 font-display text-4xl font-bold text-secondary">Sua nova régua profissional</h2>
-          <ul className="mt-10 space-y-5">
-            {[
-              "Decisões de carreira tomadas em horas — não em semanas de ruminação.",
-              "Negociações conduzidas a partir do valor, não da gratidão.",
-              "Exposição pública sem cortisol elevado.",
-              "Energia preservada para o que cria — não para o que prova.",
-              "Liderança que inspira em vez de controlar.",
-            ].map((o) => (
-              <li key={o} className="flex gap-3">
-                <Check className="mt-0.5 h-5 w-5 flex-shrink-0 text-brand-teal" />
-                <span className="text-foreground/85">{o}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <aside className="relative overflow-hidden rounded-2xl border border-brand-teal/30 bg-secondary p-8 text-white shadow-[var(--shadow-glow)]">
-          <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-brand-teal/20 blur-3xl" />
-          <p className="text-xs font-bold uppercase tracking-[0.25em] text-brand-teal">Investimento</p>
-          <p className="mt-3 font-display text-5xl font-bold">R$ 2.997</p>
-          <p className="mt-2 text-sm text-white/60">ou parcelado</p>
-          <ul className="mt-8 space-y-3 text-sm text-white/85">
-            <li className="flex gap-2"><Check className="h-4 w-4 text-brand-teal" /> 6 sessões 1:1 ao vivo</li>
-            <li className="flex gap-2"><Check className="h-4 w-4 text-brand-teal" /> Diagnóstico emocional incluso</li>
-            <li className="flex gap-2"><Check className="h-4 w-4 text-brand-teal" /> Suporte entre sessões</li>
-            <li className="flex gap-2"><Check className="h-4 w-4 text-brand-teal" /> Acesso ao Diário Emocional</li>
-          </ul>
-          <a href={wa} target="_blank" rel="noopener noreferrer"
-             className="mt-8 flex items-center justify-center gap-2 rounded-md bg-brand-teal px-6 py-3.5 text-sm font-bold uppercase tracking-wider text-white hover:bg-brand-teal-dark transition-colors">
-            Aplicar agora <ArrowUpRight className="h-4 w-4" />
-          </a>
-        </aside>
       </section>
     </main>
   );
