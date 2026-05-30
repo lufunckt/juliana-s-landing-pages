@@ -22,19 +22,31 @@ const iconMap = {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Processos de Transformação — Juliana Grimaldi" },
+      { title: "Juliana Grimaldi — 6 Processos de Reestruturação Emocional" },
       {
         name: "description",
         content:
-          "Um caminho guiado para reprogramar, na raiz, os padrões emocionais. Conheça os 6 processos de Atualização de Memórias.",
+          "Reprograme, na raiz, os padrões emocionais que travam sua carreira, relacionamentos e dinheiro. Conheça os 6 processos baseados em neurociência.",
       },
-      { property: "og:title", content: "Processos de Transformação — Juliana Grimaldi" },
+      {
+        name: "keywords",
+        content:
+          "reestruturação emocional, neurociência comportamental, autossabotagem, reconsolidação de memória, terapia emocional, Juliana Grimaldi",
+      },
+      { name: "robots", content: "index, follow, max-image-preview:large" },
+      { property: "og:title", content: "Juliana Grimaldi — 6 Processos de Reestruturação Emocional" },
       {
         property: "og:description",
         content:
-          "Reestruturação emocional baseada em neurociência. Escolha o processo certo para sua jornada.",
+          "Reestruturação emocional baseada em neurociência. Escolha o processo certo para a sua jornada.",
       },
+      { property: "og:type", content: "website" },
+      { property: "og:locale", content: "pt_BR" },
+      { property: "og:url", content: "/" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Juliana Grimaldi — 6 Processos de Reestruturação Emocional" },
     ],
+    links: [{ rel: "canonical", href: "/" }],
   }),
   component: HubPage,
 });
