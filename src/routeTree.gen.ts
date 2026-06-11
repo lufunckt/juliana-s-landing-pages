@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as VisibilidadeNaturalRouteImport } from './routes/visibilidade-natural'
 import { Route as ProtagonismoProfissionalRouteImport } from './routes/protagonismo-profissional'
+import { Route as PreviewSocialRouteImport } from './routes/preview-social'
 import { Route as DiarioEmocionalRouteImport } from './routes/diario-emocional'
 import { Route as DiagnosticoEmocionalRouteImport } from './routes/diagnostico-emocional'
 import { Route as DesbloqueioEmocionalRouteImport } from './routes/desbloqueio-emocional'
@@ -28,6 +29,11 @@ const ProtagonismoProfissionalRoute =
     path: '/protagonismo-profissional',
     getParentRoute: () => rootRouteImport,
   } as any)
+const PreviewSocialRoute = PreviewSocialRouteImport.update({
+  id: '/preview-social',
+  path: '/preview-social',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DiarioEmocionalRoute = DiarioEmocionalRouteImport.update({
   id: '/diario-emocional',
   path: '/diario-emocional',
@@ -60,6 +66,7 @@ export interface FileRoutesByFullPath {
   '/desbloqueio-emocional': typeof DesbloqueioEmocionalRoute
   '/diagnostico-emocional': typeof DiagnosticoEmocionalRoute
   '/diario-emocional': typeof DiarioEmocionalRoute
+  '/preview-social': typeof PreviewSocialRoute
   '/protagonismo-profissional': typeof ProtagonismoProfissionalRoute
   '/visibilidade-natural': typeof VisibilidadeNaturalRoute
 }
@@ -69,6 +76,7 @@ export interface FileRoutesByTo {
   '/desbloqueio-emocional': typeof DesbloqueioEmocionalRoute
   '/diagnostico-emocional': typeof DiagnosticoEmocionalRoute
   '/diario-emocional': typeof DiarioEmocionalRoute
+  '/preview-social': typeof PreviewSocialRoute
   '/protagonismo-profissional': typeof ProtagonismoProfissionalRoute
   '/visibilidade-natural': typeof VisibilidadeNaturalRoute
 }
@@ -79,6 +87,7 @@ export interface FileRoutesById {
   '/desbloqueio-emocional': typeof DesbloqueioEmocionalRoute
   '/diagnostico-emocional': typeof DiagnosticoEmocionalRoute
   '/diario-emocional': typeof DiarioEmocionalRoute
+  '/preview-social': typeof PreviewSocialRoute
   '/protagonismo-profissional': typeof ProtagonismoProfissionalRoute
   '/visibilidade-natural': typeof VisibilidadeNaturalRoute
 }
@@ -90,6 +99,7 @@ export interface FileRouteTypes {
     | '/desbloqueio-emocional'
     | '/diagnostico-emocional'
     | '/diario-emocional'
+    | '/preview-social'
     | '/protagonismo-profissional'
     | '/visibilidade-natural'
   fileRoutesByTo: FileRoutesByTo
@@ -99,6 +109,7 @@ export interface FileRouteTypes {
     | '/desbloqueio-emocional'
     | '/diagnostico-emocional'
     | '/diario-emocional'
+    | '/preview-social'
     | '/protagonismo-profissional'
     | '/visibilidade-natural'
   id:
@@ -108,6 +119,7 @@ export interface FileRouteTypes {
     | '/desbloqueio-emocional'
     | '/diagnostico-emocional'
     | '/diario-emocional'
+    | '/preview-social'
     | '/protagonismo-profissional'
     | '/visibilidade-natural'
   fileRoutesById: FileRoutesById
@@ -118,6 +130,7 @@ export interface RootRouteChildren {
   DesbloqueioEmocionalRoute: typeof DesbloqueioEmocionalRoute
   DiagnosticoEmocionalRoute: typeof DiagnosticoEmocionalRoute
   DiarioEmocionalRoute: typeof DiarioEmocionalRoute
+  PreviewSocialRoute: typeof PreviewSocialRoute
   ProtagonismoProfissionalRoute: typeof ProtagonismoProfissionalRoute
   VisibilidadeNaturalRoute: typeof VisibilidadeNaturalRoute
 }
@@ -136,6 +149,13 @@ declare module '@tanstack/react-router' {
       path: '/protagonismo-profissional'
       fullPath: '/protagonismo-profissional'
       preLoaderRoute: typeof ProtagonismoProfissionalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/preview-social': {
+      id: '/preview-social'
+      path: '/preview-social'
+      fullPath: '/preview-social'
+      preLoaderRoute: typeof PreviewSocialRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/diario-emocional': {
@@ -182,6 +202,7 @@ const rootRouteChildren: RootRouteChildren = {
   DesbloqueioEmocionalRoute: DesbloqueioEmocionalRoute,
   DiagnosticoEmocionalRoute: DiagnosticoEmocionalRoute,
   DiarioEmocionalRoute: DiarioEmocionalRoute,
+  PreviewSocialRoute: PreviewSocialRoute,
   ProtagonismoProfissionalRoute: ProtagonismoProfissionalRoute,
   VisibilidadeNaturalRoute: VisibilidadeNaturalRoute,
 }
