@@ -1,10 +1,9 @@
 import os
-import subprocess
-import shutil
+import glob
+import re
 
-# This is a simplified script to simulate a static export for TanStack Start
-# It would ideally run 'bun run build' and then crawl the routes.
-
+# Configuração
+client_dir = "dist/client"
 routes = [
     "autonomia-interna",
     "desbloqueio-emocional",
@@ -14,17 +13,60 @@ routes = [
     "visibilidade-natural"
 ]
 
-dist_dir = "dist/static"
-if os.path.exists(dist_dir):
-    shutil.rmtree(dist_dir)
-os.makedirs(dist_dir)
+# 1. Encontrar assets
+css_files = glob.glob(os.path.join(client_dir, "assets/*.css"))
+js_files = glob.glob(os.path.join(client_dir, "assets/index-*.js"))
 
-# Copy client assets
-shutil.copytree("dist/client/assets", os.path.join(dist_dir, "assets"))
+if not css_files or not js_files:
+    print("Erro: Assets não encontrados em dist/client/assets")
+    exit(1)
 
-# For each route, we would ideally render it to HTML.
-# Since we can't easily run the SSR server here and crawl it,
-# we will provide instructions for the user on how to use the 'dist/client'
-# and how a typical SSG build would look.
+css_name = os.path.basename(css_files[0])
+# Pegar o maior arquivo JS index
+js_name = os.path.basename(max(js_files, key=os.path.getsize))
 
-print("Static export simulation complete.")
+print(f"Usando CSS: {css_name}")
+print(f"Usando JS: {js_name}")
+
+# 2. Gerar index.html base
+html_template = f"""<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Juliana Grimaldi — Reestruturação Emocional na Raiz</title>
+  <meta name="description" content="Processos de reestruturação emocional baseados em neurociência para reprogramar, na raiz, padrões de autossabotagem.">
+  <link rel="stylesheet" href="/assets/{css_name}">
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/assets/{js_name}"></script>
+</body>
+</html>"""
+
+with open(os.path.join(client_dir, "index.html"), "w") as f:
+    f.write(html_template)
+
+# 3. Gerar folders para cada rota (opcional mas bom para cPanel)
+for route in routes:
+    route_dir = os.path.join(client_dir, route)
+    os.makedirs(route_dir, exist_ok=True)
+    # Ajustar caminhos para caminhos relativos se necessário, ou manter absoluto se for no root
+    # Aqui usaremos caminhos absolutos /assets/ para simplificar se subir na raiz
+    with open(os.path.join(route_dir, "index.html"), "w") as f:
+        f.write(html_template)
+
+# 4. Gerar .htaccess
+htaccess = """<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>"""
+
+with open(os.path.join(client_dir, ".htaccess"), "w") as f:
+    f.write(htaccess)
+
+print("Arquivos estáticos gerados com sucesso em dist/client")

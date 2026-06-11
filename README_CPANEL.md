@@ -1,23 +1,39 @@
-# Guia de Upload para o cPanel - Juliana Grimaldi
+# Guia Final de Upload para o cPanel - Juliana Grimaldi
 
-Para subir as landing pages no seu cPanel e manter cada uma em sua própria pasta/URL, siga estes passos:
+Como o seu cPanel **não possui Node.js**, configuramos o projeto para rodar como uma aplicação estática (SPA). Siga exatamente estes passos:
 
-## 1. Preparar os Arquivos
+## 1. O que subir?
 
-Como o site é uma aplicação React moderna, o build gera arquivos otimizados.
+Você deve subir o **CONTEÚDO** da pasta `dist/client` para a raiz do seu domínio no cPanel (geralmente dentro da pasta `public_html`).
 
-- Rode `bun run build`.
-- A pasta `dist/client` conterá todos os arquivos necessários.
+Os arquivos principais que devem estar na raiz do cPanel são:
+- `assets/` (pasta com CSS, JS e Imagens)
+- `index.html` (arquivo que eu gerei agora)
+- `.htaccess` (arquivo de configuração de rotas)
+- Pastas como `autonomia-interna/`, `desbloqueio-emocional/`, etc. (elas ajudam o cPanel a encontrar as páginas diretamente).
 
-## 2. Estrutura de Pastas no cPanel
+## 2. URLs das suas Landing Pages
 
-Para que cada página tenha sua própria URL (ex: `site.com.br/autonomia`), você tem duas opções:
+Após subir os arquivos, estas serão as URLs exatas:
 
-### Opção A: Aplicativo Único (Recomendado)
+- **Página Principal:** `https://seusite.com.br/`
+- **Autonomia Interna:** `https://seusite.com.br/autonomia-interna`
+- **Desbloqueio Emocional:** `https://seusite.com.br/desbloqueio-emocional`
+- **Diagnóstico Emocional:** `https://seusite.com.br/diagnostico-emocional`
+- **Diário Emocional:** `https://seusite.com.br/diario-emocional`
+- **Protagonismo Profissional:** `https://seusite.com.br/protagonismo-profissional`
+- **Visibilidade Natural:** `https://seusite.com.br/visibilidade-natural`
 
-Suba todo o conteúdo da pasta `dist/client` para a pasta raiz do seu domínio (geralmente `public_html`).
+## 3. Como trocar as imagens?
 
-- Para que as rotas funcionem (ex: ao atualizar a página `/autonomia-interna`), você precisa criar um arquivo `.htaccess` na raiz com o seguinte conteúdo:
+As imagens de "Open Graph" (que aparecem quando você compartilha o link) estão na pasta `assets/`.
+Se você quiser trocar as fotos das páginas, você tem duas opções:
+1. Substituir os arquivos em `src/assets` no seu computador, rodar o build novamente e gerar os arquivos estáticos.
+2. Ou, localizar a imagem correspondente em `assets/` (ex: `og-autonomia-D68WFLZj.jpg`) e substituí-la por uma sua mantendo o **MESMO NOME**.
+
+## 4. Importante sobre o .htaccess
+
+O arquivo `.htaccess` é vital. Ele garante que, se alguém atualizar a página (F5) em `/autonomia-interna`, o cPanel saiba que deve carregar o site principal em vez de dar um erro 404.
 
 ```apache
 <IfModule mod_rewrite.c>
@@ -30,17 +46,4 @@ Suba todo o conteúdo da pasta `dist/client` para a pasta raiz do seu domínio (
 </IfModule>
 ```
 
-### Opção B: Pastas Físicas Independentes
-
-Se você realmente precisa de pastas separadas fisicamente:
-
-1. Crie a pasta no cPanel (ex: `autonomia`).
-2. Suba o conteúdo de `dist/client` para dentro dela.
-3. Repita o processo para as outras, mas note que isso pode duplicar arquivos de código (assets). A **Opção A** é muito mais eficiente.
-
-## 3. Imagens (Assets)
-
-As imagens que usei são do Unsplash para visualização. Para trocar pelas suas fotos:
-
-- Você pode substituir os arquivos na pasta `src/assets` antes de fazer o build.
-- Ou, após subir no cPanel, localizar a imagem na pasta `assets` (ela terá um nome com código, ex: `og-autonomia-D68WFLZj.jpg`) e substituí-la por uma sua com o **mesmo nome exato**.
+**Dica:** Se o seu cPanel não mostrar o arquivo `.htaccess`, certifique-se de que a opção "Show Hidden Files" (Mostrar arquivos ocultos) está marcada nas configurações do Gerenciador de Arquivos.
