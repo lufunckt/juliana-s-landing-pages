@@ -113,6 +113,16 @@ export function buildHead(slug: string, path: string) {
     { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:title", content: fullTitle },
     { name: "twitter:description", content: seo.description },
+    ...(seo.ogImage
+      ? [
+          { property: "og:image", content: seo.ogImage },
+          { property: "og:image:width", content: "1216" },
+          { property: "og:image:height", content: "640" },
+          { property: "og:image:alt", content: seo.title },
+          { name: "twitter:image", content: seo.ogImage },
+          { name: "twitter:image:alt", content: seo.title },
+        ]
+      : []),
   ];
 
   const offers = seo.price
