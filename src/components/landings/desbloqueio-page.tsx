@@ -1,216 +1,206 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Check, Sparkles, Brain } from "lucide-react";
 
 const wa = "https://wa.link/thno3v";
 
 const identificacao = [
-  "Você se sabota.",
-  "Você trava.",
-  "Você se sente insegura.",
-  "Você repete escolhas que geram sofrimento.",
-  "Tem dificuldade de se posicionar nos relacionamentos, nas decisões e na vida.",
-];
-
-const paraQuem = [
-  "Sente que repete padrões emocionais, mesmo tentando mudar.",
-  "Tem comportamentos de autossabotagem.",
-  "Sente insegurança para se posicionar.",
-  "Vive bloqueios emocionais que afetam decisões, relacionamentos e escolhas.",
+  "Sente que as mesmas situações despertam reações que você não consegue controlar.",
+  "Percebe que atrai ou se mantém em relacionamentos com dinâmicas repetitivas.",
+  "Experimenta um sentimento de 'paralisia' ou medo diante de novas escolhas.",
   "Sente que algumas dores antigas ainda influenciam sua vida atual.",
   "Tem dificuldade de romper ciclos que já compreendeu racionalmente.",
-  "Deseja transformar a forma como reage diante de situações que antes geravam sofrimento ou paralisação.",
+  "Deseja transformar a forma como reage diante de situações que antes geravam sofrimento.",
 ];
 
 export function DesbloqueioPage() {
   return (
-    <main className="bg-background">
-      {/* HERO */}
-      <section className="relative overflow-hidden bg-secondary text-white">
-        <div className="absolute inset-0 opacity-60 [background-image:radial-gradient(ellipse_at_30%_25%,oklch(0.74_0.13_180/0.35),transparent_60%),radial-gradient(circle_at_85%_80%,oklch(0.3_0.09_215/0.55),transparent_60%)]" />
-        <div className="relative mx-auto max-w-6xl px-6 py-24 md:py-32">
-          <Link to="/" className="text-xs font-semibold uppercase tracking-[0.25em] text-brand-teal hover:text-white">
-            ← Todos os processos
-          </Link>
-          <p className="mt-10 text-[11px] font-bold uppercase tracking-[0.3em] text-brand-teal">
-            Atualização de Memórias · 8 encontros
-          </p>
-          <h1 className="mt-5 max-w-4xl text-5xl font-extrabold leading-[1.05] md:text-6xl lg:text-7xl">
-            Desbloqueio Emocional
-          </h1>
-          <p className="mt-8 max-w-3xl text-xl leading-relaxed text-white/85 md:text-2xl">
-            Quando o padrão emocional muda, a vida começa a mudar junto.
-          </p>
-          <p className="mt-6 max-w-3xl text-sm leading-relaxed text-white/60 md:text-base">
-            Um processo em 8 encontros, com sessões de até 1h30, para acessar memórias emocionais
-            que sustentam autossabotagem, insegurança, bloqueios emocionais, dificuldades nos
-            relacionamentos e na forma como você se posiciona na vida.
-          </p>
-          <div className="mt-10 flex flex-wrap items-center gap-4">
-            <a
-              href={wa}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 rounded-md bg-brand-teal px-7 py-4 text-sm font-bold uppercase tracking-wider text-white shadow-[var(--shadow-glow)] transition-all hover:bg-brand-teal-dark"
-            >
-              Ver Pacote: R$ 1.997 <ArrowRight className="h-4 w-4" />
-            </a>
-            <a
-              href={wa}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-md border border-white/30 px-7 py-4 text-sm font-bold uppercase tracking-wider hover:bg-white/10"
-            >
-              Falar com a equipe
-            </a>
-          </div>
+    <main className="bg-background text-foreground selection:bg-brand-teal/30">
+      {/* HERO SECTION */}
+      <section className="relative min-h-[80vh] flex items-center overflow-hidden bg-brand-navy pt-16">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-1/4 -right-20 w-96 h-96 bg-brand-teal rounded-full blur-[120px]" />
+          <div className="absolute bottom-1/4 -left-20 w-96 h-96 bg-brand-navy-deep rounded-full blur-[120px]" />
         </div>
-      </section>
 
-      {/* IDENTIFICAÇÃO */}
-      <section className="mx-auto max-w-5xl px-6 py-24">
-        <p className="text-xs font-bold uppercase tracking-[0.25em] text-brand-teal">Identificação</p>
-        <h2 className="mt-4 max-w-3xl text-4xl font-bold leading-tight text-secondary md:text-5xl">
-          Você percebe que alguns padrões continuam se repetindo, mesmo quando tenta fazer diferente.
-        </h2>
-        <p className="mt-8 max-w-3xl text-lg leading-relaxed text-foreground/80">
-          Você entende racionalmente o que precisa mudar, mas emocionalmente continua reagindo da
-          mesma forma.
-        </p>
-        <ul className="mt-10 grid gap-4 md:grid-cols-2">
-          {identificacao.map((i) => (
-            <li
-              key={i}
-              className="rounded-xl border border-border bg-card p-5 text-foreground/85 shadow-[var(--shadow-card)]"
+        <div className="relative mx-auto max-w-7xl px-6 py-20 lg:grid lg:grid-cols-12 lg:gap-16 items-center">
+          <div className="lg:col-span-7">
+            <Link
+              to="/"
+              className="inline-flex items-center text-xs font-semibold uppercase tracking-[0.25em] text-brand-teal hover:opacity-80 transition-all mb-8"
             >
-              {i}
-            </li>
-          ))}
-        </ul>
-        <div className="mt-12 border-l-2 border-brand-teal pl-6">
-          <p className="text-lg text-foreground/80">Às vezes, não é falta de consciência.</p>
-          <p className="mt-3 text-lg font-semibold text-secondary">
-            É uma memória emocional antiga ainda conduzindo suas respostas no presente.
-          </p>
-        </div>
-      </section>
-
-      {/* APROFUNDAMENTO */}
-      <section className="bg-secondary py-24 text-white">
-        <div className="mx-auto max-w-5xl px-6">
-          <p className="text-xs font-bold uppercase tracking-[0.25em] text-brand-teal">Aprofundamento</p>
-          <h2 className="mt-4 max-w-3xl text-4xl font-bold leading-tight md:text-5xl">
-            O sofrimento se repete quando o cérebro continua respondendo a partir de registros
-            emocionais antigos.
-          </h2>
-          <div className="mt-10 space-y-5 text-lg leading-relaxed text-white/75">
-            <p>Muitas das suas reações não começam no momento atual.</p>
-            <p>
-              Elas são ativadas por memórias, associações e padrões que o cérebro aprendeu a
-              reconhecer como ameaça, proteção ou sobrevivência.
+              ← Todos os processos
+            </Link>
+            <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-brand-teal mb-4">
+              Atualização de Memórias · 8 encontros
             </p>
-            <p>Por isso, você pode até saber o que deveria fazer.</p>
-          </div>
-          <div className="mt-12 grid gap-3 md:grid-cols-4">
-            {[
-              "Mas, na hora de agir, o corpo recua.",
-              "A emoção domina.",
-              "O padrão se repete.",
-              "Você se vê novamente no mesmo lugar.",
-            ].map((s) => (
-              <div
-                key={s}
-                className="rounded-lg border border-white/15 bg-white/5 p-5 text-sm text-white/85"
+            <h1 className="font-display text-5xl font-extrabold leading-[1.1] text-white md:text-7xl">
+              Desbloqueio <span className="text-brand-teal">Emocional</span>
+            </h1>
+            <p className="mt-8 text-xl leading-relaxed text-white/80 max-w-2xl md:text-2xl font-light">
+              Quando o padrão emocional muda, a vida começa a mudar junto. Acesse a raiz dos
+              comportamentos que limitam sua liberdade.
+            </p>
+
+            <div className="mt-12 flex flex-col sm:flex-row gap-5">
+              <a
+                href={wa}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-3 rounded-full bg-brand-teal px-8 py-5 text-sm font-bold uppercase tracking-wider text-white shadow-xl hover:bg-brand-teal-dark transition-all"
               >
-                {s}
+                Ver Pacote: R$ 1.997 <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
+          </div>
+
+          <div className="mt-16 lg:mt-0 lg:col-span-5 relative">
+            <div className="aspect-[3/4] rounded-2xl overflow-hidden bg-brand-navy-deep/50 border border-white/10 shadow-2xl relative z-10">
+              <img
+                src="https://images.unsplash.com/photo-1516589174184-c6852651428c?auto=format&fit=crop&q=80&w=800"
+                alt="Desbloqueio Emocional"
+                className="w-full h-full object-cover opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-700"
+              />
+            </div>
+            <div className="absolute -bottom-8 -left-8 bg-white p-6 rounded-2xl shadow-2xl z-20 max-w-[200px]">
+              <Sparkles className="h-8 w-8 text-brand-teal mb-3" />
+              <p className="text-sm font-medium text-brand-navy">
+                Transformação real começa na memória emocional.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* IDENTIFICAÇÃO SECTION */}
+      <section className="py-24 md:py-32 bg-white">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="max-w-3xl mb-20">
+            <span className="text-xs font-bold uppercase tracking-[0.25em] text-brand-teal">
+              Identificação
+            </span>
+            <h2 className="mt-6 font-display text-4xl font-bold text-brand-navy leading-tight md:text-5xl">
+              Você percebe que alguns padrões continuam se repetindo...
+            </h2>
+            <p className="mt-6 text-xl text-foreground/70">
+              Mesmo quando você já entendeu racionalmente o que precisa mudar.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {identificacao.map((item, i) => (
+              <div
+                key={i}
+                className="group p-8 rounded-2xl border border-border bg-background hover:border-brand-teal/30 hover:shadow-lg transition-all duration-300"
+              >
+                <div className="h-10 w-10 rounded-full bg-brand-teal/10 flex items-center justify-center text-brand-teal mb-6 group-hover:bg-brand-teal group-hover:text-white transition-colors">
+                  <Check className="h-5 w-5" />
+                </div>
+                <p className="text-lg text-foreground/80 leading-relaxed">{item}</p>
               </div>
             ))}
           </div>
+
+          <div className="mt-20 p-10 rounded-3xl bg-brand-navy text-white relative overflow-hidden">
+            <div className="relative z-10 md:flex items-center gap-12">
+              <Brain className="h-16 w-16 text-brand-teal shrink-0 mb-6 md:mb-0" strokeWidth={1} />
+              <div>
+                <p className="text-2xl font-light leading-relaxed">
+                  "Às vezes, não é falta de consciência. É uma{" "}
+                  <span className="text-brand-teal font-semibold">memória emocional antiga</span>{" "}
+                  ainda conduzindo suas respostas no presente."
+                </p>
+              </div>
+            </div>
+            <div className="absolute top-0 right-0 w-64 h-64 bg-brand-teal/10 rounded-full blur-3xl" />
+          </div>
         </div>
       </section>
 
-      {/* MÉTODO */}
-      <section className="mx-auto max-w-5xl px-6 py-24">
-        <p className="text-xs font-bold uppercase tracking-[0.25em] text-brand-teal">O Método</p>
-        <h2 className="mt-4 max-w-3xl text-4xl font-bold leading-tight text-secondary md:text-5xl">
-          8 encontros. Sessões de até 1h30. Acesso direto à raiz.
-        </h2>
-        <div className="mt-10 space-y-5 text-lg leading-relaxed text-foreground/80">
-          <p>
-            Desbloqueio Emocional é um processo realizado em 8 encontros, com sessões de até 1h30.
-          </p>
-          <p>
-            Durante o processo, acessamos as memórias emocionais que hoje sustentam comportamentos
-            de autossabotagem, insegurança, bloqueios emocionais, dificuldades nos relacionamentos
-            e na forma como você se posiciona na vida.
-          </p>
-          <p>
-            Através de uma abordagem baseada na neurociência e na reconsolidação de memórias,
-            atuamos diretamente na raiz dos padrões emocionais automáticos.
-          </p>
-          <p>
-            O objetivo é permitir que o cérebro reorganize novas respostas emocionais diante das
-            situações que antes geravam sofrimento, repetição de padrões ou paralisação.
-          </p>
-        </div>
-      </section>
+      {/* METHOD SECTION */}
+      <section className="py-24 md:py-32 bg-muted/30">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="lg:grid lg:grid-cols-2 gap-20 items-center">
+            <div>
+              <span className="text-xs font-bold uppercase tracking-[0.25em] text-brand-teal">
+                O Processo
+              </span>
+              <h2 className="mt-6 font-display text-4xl font-bold text-brand-navy md:text-5xl">
+                8 encontros para acessar a sua liberdade.
+              </h2>
+              <div className="mt-10 space-y-6 text-lg text-foreground/70 leading-relaxed">
+                <p>
+                  Durante o processo, acessamos as memórias emocionais que hoje sustentam
+                  comportamentos de autossabotagem, insegurança e bloqueios.
+                </p>
+                <p>
+                  Através de uma abordagem baseada na neurociência e na reconsolidação de memórias,
+                  atuamos diretamente na raiz dos padrões emocionais automáticos.
+                </p>
+                <p className="font-semibold text-brand-navy">
+                  O objetivo é permitir que o cérebro reorganize novas respostas emocionais.
+                </p>
+              </div>
 
-      {/* PARA QUEM É */}
-      <section className="bg-muted/40 py-24">
-        <div className="mx-auto max-w-5xl px-6">
-          <p className="text-xs font-bold uppercase tracking-[0.25em] text-brand-teal">Para quem é</p>
-          <h2 className="mt-4 text-4xl font-bold text-secondary md:text-5xl">
-            Esse processo é para você se:
-          </h2>
-          <ul className="mt-10 grid gap-4 md:grid-cols-2">
-            {paraQuem.map((p) => (
-              <li
-                key={p}
-                className="flex gap-3 rounded-xl border border-border bg-card p-5 shadow-[var(--shadow-card)]"
+              <a
+                href={wa}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-12 inline-flex items-center gap-3 rounded-full bg-brand-navy px-8 py-4 text-sm font-bold uppercase tracking-wider text-white hover:bg-brand-navy-deep transition-all"
               >
-                <Check className="mt-0.5 h-5 w-5 flex-shrink-0 text-brand-teal" />
-                <span className="text-foreground/85">{p}</span>
-              </li>
-            ))}
-          </ul>
+                Agendar entrevista <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
+
+            <div className="mt-16 lg:mt-0 grid grid-cols-2 gap-4">
+              <div className="space-y-4">
+                <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-lg">
+                  <img
+                    src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&q=80&w=600"
+                    className="w-full h-full object-cover"
+                    alt="Equilíbrio"
+                  />
+                </div>
+                <div className="aspect-square rounded-2xl overflow-hidden shadow-lg bg-brand-teal/20 p-8 flex items-end">
+                  <p className="text-brand-navy font-bold text-xl leading-tight">
+                    Clareza & Consciência
+                  </p>
+                </div>
+              </div>
+              <div className="space-y-4 pt-12">
+                <div className="aspect-square rounded-2xl overflow-hidden shadow-lg bg-brand-navy p-8 flex items-start">
+                  <p className="text-brand-teal font-bold text-xl leading-tight">
+                    Liberdade Interna
+                  </p>
+                </div>
+                <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-lg">
+                  <img
+                    src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=600"
+                    className="w-full h-full object-cover"
+                    alt="Paz"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* RESULTADO */}
-      <section className="mx-auto max-w-5xl px-6 py-24">
-        <p className="text-xs font-bold uppercase tracking-[0.25em] text-brand-teal">Resultado</p>
-        <h2 className="mt-4 max-w-3xl text-4xl font-bold leading-tight text-secondary md:text-5xl">
-          Quando o padrão emocional muda, a vida começa a mudar junto.
-        </h2>
-        <div className="mt-10 space-y-5 text-lg leading-relaxed text-foreground/80">
-          <p>A transformação não acontece apenas quando você entende o problema.</p>
-          <p>
-            Ela começa quando o cérebro passa a construir novas respostas diante das situações que
-            antes ativavam dor, medo, insegurança ou repetição.
-          </p>
-          <p>
-            O processo busca trazer mais clareza, consciência emocional e liberdade interna para
-            que você pare de responder à vida a partir dos mesmos registros antigos.
-          </p>
-        </div>
-      </section>
-
-      {/* CTA FINAL */}
-      <section className="bg-secondary py-24 text-white">
+      {/* FINAL CTA */}
+      <section className="py-24 md:py-32 bg-white">
         <div className="mx-auto max-w-4xl px-6 text-center">
-          <h2 className="text-4xl font-bold leading-tight md:text-5xl">
-            Você não precisa continuar repetindo padrões que já percebeu, mas ainda não conseguiu
-            transformar.
+          <h2 className="font-display text-4xl font-bold text-brand-navy leading-tight md:text-6xl">
+            Você não precisa continuar repetindo padrões.
           </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-white/75">
-            Inicie o processo de Desbloqueio Emocional e comece a acessar a raiz das respostas que
-            hoje limitam sua vida.
+          <p className="mt-8 text-xl text-foreground/70 leading-relaxed">
+            Inicie o processo de Desbloqueio Emocional e comece a transformar as respostas que hoje
+            limitam sua vida.
           </p>
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+          <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6">
             <a
               href={wa}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 rounded-md bg-brand-teal px-8 py-4 text-sm font-bold uppercase tracking-wider text-white shadow-[var(--shadow-glow)] transition-all hover:bg-brand-teal-dark"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 rounded-full bg-brand-teal px-10 py-5 text-sm font-bold uppercase tracking-wider text-white shadow-xl hover:bg-brand-teal-dark transition-all"
             >
               Ver Pacote: R$ 1.997 <ArrowRight className="h-4 w-4" />
             </a>
@@ -218,7 +208,7 @@ export function DesbloqueioPage() {
               href={wa}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-md border border-white/30 px-8 py-4 text-sm font-bold uppercase tracking-wider hover:bg-white/10"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 rounded-full border border-brand-navy/20 px-10 py-5 text-sm font-bold uppercase tracking-wider text-brand-navy hover:bg-brand-navy/5 transition-all"
             >
               Falar com a equipe
             </a>

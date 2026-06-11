@@ -13,8 +13,15 @@ export function SiteHeader() {
           </span>
         </Link>
         <nav className="hidden gap-8 text-sm font-medium text-secondary md:flex">
-          <Link to="/" className="hover:text-brand-teal transition-colors">Processos</Link>
-          <a href="https://julianagrimaldioficial.com.br/" target="_blank" rel="noopener noreferrer" className="hover:text-brand-teal transition-colors">
+          <Link to="/" className="hover:text-brand-teal transition-colors">
+            Processos
+          </Link>
+          <a
+            href="https://julianagrimaldioficial.com.br/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-brand-teal transition-colors"
+          >
             A Metodologia
           </a>
         </nav>
@@ -45,12 +52,36 @@ export function SiteFooter() {
           <div>
             <p className="text-xs font-bold uppercase tracking-wider text-brand-teal">Processos</p>
             <ul className="mt-3 space-y-1.5 text-sm text-secondary-foreground/80">
-              <li><Link to="/protagonismo-profissional" className="hover:text-brand-teal">Protagonismo Profissional</Link></li>
-              <li><Link to="/desbloqueio-emocional" className="hover:text-brand-teal">Desbloqueio Emocional</Link></li>
-              <li><Link to="/diagnostico-emocional" className="hover:text-brand-teal">Diagnóstico Emocional</Link></li>
-              <li><Link to="/diario-emocional" className="hover:text-brand-teal">Diário Emocional</Link></li>
-              <li><Link to="/autonomia-interna" className="hover:text-brand-teal">Autonomia Interna</Link></li>
-              <li><Link to="/visibilidade-natural" className="hover:text-brand-teal">Visibilidade Natural</Link></li>
+              <li>
+                <Link to="/protagonismo-profissional" className="hover:text-brand-teal">
+                  Protagonismo Profissional
+                </Link>
+              </li>
+              <li>
+                <Link to="/desbloqueio-emocional" className="hover:text-brand-teal">
+                  Desbloqueio Emocional
+                </Link>
+              </li>
+              <li>
+                <Link to="/diagnostico-emocional" className="hover:text-brand-teal">
+                  Diagnóstico Emocional
+                </Link>
+              </li>
+              <li>
+                <Link to="/diario-emocional" className="hover:text-brand-teal">
+                  Diário Emocional
+                </Link>
+              </li>
+              <li>
+                <Link to="/autonomia-interna" className="hover:text-brand-teal">
+                  Autonomia Interna
+                </Link>
+              </li>
+              <li>
+                <Link to="/visibilidade-natural" className="hover:text-brand-teal">
+                  Visibilidade Natural
+                </Link>
+              </li>
             </ul>
           </div>
           <div>

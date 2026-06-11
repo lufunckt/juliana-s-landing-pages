@@ -21,16 +21,14 @@ export const sections: Section[] = [
     slug: "protagonismo-profissional",
     title: "Protagonismo Profissional",
     category: "Carreira & Performance",
-    shortDesc:
-      "Reestruturação emocional para posicionamento, performance e evolução na carreira.",
+    shortDesc: "Reestruturação emocional para posicionamento, performance e evolução na carreira.",
     ctaLabel: "Ver Método",
     price: "R$ 2.997",
     icon: "briefcase",
     ctaUrl: wa,
     hero: {
       kicker: "PROTAGONISMO PROFISSIONAL",
-      headline:
-        "Assuma a liderança da sua carreira sem depender de aprovação externa.",
+      headline: "Assuma a liderança da sua carreira sem depender de aprovação externa.",
       subhead:
         "Um processo profundo de reestruturação emocional para profissionais de alto desempenho que querem posicionamento, presença e evolução real, sem autossabotagem.",
     },
@@ -125,8 +123,7 @@ export const sections: Section[] = [
     ctaUrl: wa,
     hero: {
       kicker: "DIAGNÓSTICO DA RAIZ EMOCIONAL",
-      headline:
-        "Em 2h, você descobre a raiz exata dos padrões que travam sua vida.",
+      headline: "Em 2h, você descobre a raiz exata dos padrões que travam sua vida.",
       subhead:
         "Uma sessão confidencial de mapeamento emocional, baseada em neurociência comportamental, para você sair com clareza e direção.",
     },
@@ -220,8 +217,7 @@ export const sections: Section[] = [
     ctaUrl: wa,
     hero: {
       kicker: "AUTONOMIA INTERNA",
-      headline:
-        "Diga 'não' sem culpa. Priorize você sem se sentir egoísta.",
+      headline: "Diga 'não' sem culpa. Priorize você sem se sentir egoísta.",
       subhead:
         "Um processo para encerrar o ciclo de exaustão emocional causado pela necessidade de aprovação e pela dificuldade de impor limites.",
     },
@@ -267,8 +263,7 @@ export const sections: Section[] = [
     ctaUrl: wa,
     hero: {
       kicker: "VISIBILIDADE NATURAL",
-      headline:
-        "Sua voz ouvida, sua presença respeitada — sem precisar performar.",
+      headline: "Sua voz ouvida, sua presença respeitada — sem precisar performar.",
       subhead:
         "Um processo de reestruturação emocional para você se expressar com clareza, segurança e autoridade orgânica.",
     },
