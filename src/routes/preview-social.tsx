@@ -64,7 +64,12 @@ function TwitterCard({
   return (
     <div className="overflow-hidden rounded-2xl border border-[#cfd9de] bg-white font-sans text-[15px] text-[#0f1419]">
       {image ? (
-        <img src={image} alt="" crossOrigin="anonymous" className="aspect-[1.91/1] w-full object-cover" />
+        <img
+          src={image}
+          alt=""
+          crossOrigin="anonymous"
+          className="aspect-[1.91/1] w-full object-cover"
+        />
       ) : (
         <div className="flex aspect-[1.91/1] w-full items-center justify-center bg-[#e8edf1] text-sm text-[#536471]">
           sem imagem
@@ -81,19 +86,16 @@ function TwitterCard({
   );
 }
 
-function LinkedInCard({
-  image,
-  title,
-  domain,
-}: {
-  image?: string;
-  title: string;
-  domain: string;
-}) {
+function LinkedInCard({ image, title, domain }: { image?: string; title: string; domain: string }) {
   return (
     <div className="overflow-hidden rounded-md border border-[#e0e0e0] bg-white font-sans text-[#000000e6] shadow-sm">
       {image ? (
-        <img src={image} alt="" crossOrigin="anonymous" className="aspect-[1.91/1] w-full object-cover" />
+        <img
+          src={image}
+          alt=""
+          crossOrigin="anonymous"
+          className="aspect-[1.91/1] w-full object-cover"
+        />
       ) : (
         <div className="flex aspect-[1.91/1] w-full items-center justify-center bg-[#edf3f8] text-sm text-[#00000099]">
           sem imagem
@@ -101,9 +103,7 @@ function LinkedInCard({
       )}
       <div className="bg-[#edf3f8] px-3 py-2.5">
         <div className="line-clamp-2 text-[14px] font-semibold leading-snug">{title}</div>
-        <div className="mt-1 text-[12px] uppercase tracking-wide text-[#00000099]">
-          {domain}
-        </div>
+        <div className="mt-1 text-[12px] uppercase tracking-wide text-[#00000099]">{domain}</div>
       </div>
     </div>
   );
@@ -240,15 +240,18 @@ function PreviewSocialPage() {
     <main className="min-h-screen bg-muted/40 py-12">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-10">
-          <Link to="/" className="text-xs font-semibold uppercase tracking-[0.25em] text-brand-teal hover:opacity-75">
+          <Link
+            to="/"
+            className="text-xs font-semibold uppercase tracking-[0.25em] text-brand-teal hover:opacity-75"
+          >
             ← Voltar
           </Link>
           <h1 className="mt-3 font-display text-4xl font-bold text-secondary">Preview Social</h1>
           <p className="mt-2 max-w-2xl text-foreground/70">
             Pré-visualização dos cards de X/Twitter e LinkedIn de cada landing. Use os botões{" "}
             <span className="font-mono text-xs">PNG</span> /{" "}
-            <span className="font-mono text-xs">JPG</span> para exportar a imagem do card e
-            anexar nos seus testes.
+            <span className="font-mono text-xs">JPG</span> para exportar a imagem do card e anexar
+            nos seus testes.
           </p>
           <p className="mt-1 text-xs text-foreground/60">
             Domínio simulado: <span className="font-mono">{domain}</span>

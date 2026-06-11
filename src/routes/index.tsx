@@ -7,6 +7,7 @@ import {
   Shield,
   Megaphone,
   ArrowRight,
+  Sparkles,
 } from "lucide-react";
 import { sections } from "@/lib/sections";
 
@@ -34,7 +35,10 @@ export const Route = createFileRoute("/")({
           "reestruturação emocional, neurociência comportamental, autossabotagem, reconsolidação de memória, terapia emocional, Juliana Grimaldi",
       },
       { name: "robots", content: "index, follow, max-image-preview:large" },
-      { property: "og:title", content: "Juliana Grimaldi — 6 Processos de Reestruturação Emocional" },
+      {
+        property: "og:title",
+        content: "Juliana Grimaldi — 6 Processos de Reestruturação Emocional",
+      },
       {
         property: "og:description",
         content:
@@ -44,7 +48,10 @@ export const Route = createFileRoute("/")({
       { property: "og:locale", content: "pt_BR" },
       { property: "og:url", content: "/" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Juliana Grimaldi — 6 Processos de Reestruturação Emocional" },
+      {
+        name: "twitter:title",
+        content: "Juliana Grimaldi — 6 Processos de Reestruturação Emocional",
+      },
     ],
     links: [{ rel: "canonical", href: "/" }],
   }),
@@ -53,53 +60,80 @@ export const Route = createFileRoute("/")({
 
 function HubPage() {
   return (
-    <main>
-      <section
-        className="relative overflow-hidden"
-        style={{ background: "var(--gradient-hero)" }}
-      >
-        <div className="absolute inset-0 opacity-30 [background-image:radial-gradient(circle_at_20%_30%,oklch(0.74_0.13_180/0.4),transparent_55%),radial-gradient(circle_at_85%_70%,oklch(0.3_0.1_220/0.5),transparent_55%)]" />
-        <div className="relative mx-auto max-w-5xl px-6 py-24 text-center md:py-32">
-          <p className="text-xs font-bold uppercase tracking-[0.3em] text-brand-teal">
+    <main className="bg-background selection:bg-brand-teal/30">
+      <section className="relative overflow-hidden bg-brand-navy pt-20 pb-32">
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-brand-teal rounded-full blur-[150px] opacity-10" />
+          <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-brand-navy-deep rounded-full blur-[150px] opacity-20" />
+        </div>
+
+        <div className="relative mx-auto max-w-5xl px-6 text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-brand-teal text-xs font-bold uppercase tracking-[0.2em] mb-10">
+            <Sparkles className="h-4 w-4" />
             Processos Estruturados de Transformação
-          </p>
-          <h1 className="mt-6 font-display text-4xl font-bold leading-[1.05] text-white md:text-6xl">
-            Um caminho guiado para reprogramar, na raiz, os padrões emocionais.
+          </div>
+
+          <h1 className="font-display text-5xl font-extrabold leading-[1.1] text-white md:text-7xl lg:text-8xl">
+            A sua liberdade começa na <span className="text-brand-teal italic">raiz</span>.
           </h1>
-          <p className="mx-auto mt-7 max-w-2xl text-base leading-relaxed text-white/80 md:text-lg">
-            Um processo guiado para acessar, na raiz, as memórias emocionais que mantêm você no
+
+          <p className="mx-auto mt-10 max-w-2xl text-xl leading-relaxed text-white/70 md:text-2xl font-light">
+            Um caminho guiado para acessar e reprogramar as memórias emocionais que mantêm você no
             mesmo lugar — mesmo quando você tenta fazer diferente.
           </p>
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-20">
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <section className="relative -mt-16 z-20 mx-auto max-w-6xl px-6 pb-24">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {sections.map((s) => {
             const Icon = iconMap[s.icon];
             return (
               <Link
                 key={s.slug}
                 to={`/${s.slug}` as string}
-                className="group relative flex flex-col rounded-xl border border-border bg-card p-8 shadow-[var(--shadow-card)] transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-glow)]"
+                className="group relative flex flex-col rounded-3xl border border-border bg-white p-10 shadow-xl transition-all hover:-translate-y-2 hover:shadow-2xl hover:border-brand-teal/30"
               >
-                <div className="flex h-14 w-14 items-center justify-center rounded-lg bg-muted text-brand-teal transition-colors group-hover:bg-brand-teal group-hover:text-white">
-                  <Icon className="h-7 w-7" strokeWidth={1.5} />
+                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-muted/50 text-brand-teal transition-all group-hover:bg-brand-teal group-hover:text-white group-hover:scale-110 group-hover:rotate-3 shadow-sm">
+                  <Icon className="h-8 w-8" strokeWidth={1.5} />
                 </div>
-                <h2 className="mt-6 font-display text-xl font-bold leading-tight text-secondary">
+
+                <h2 className="mt-8 font-display text-2xl font-bold leading-tight text-brand-navy group-hover:text-brand-teal transition-colors">
                   {s.title}
                 </h2>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-foreground/70">
+
+                <p className="mt-4 flex-1 text-base leading-relaxed text-foreground/70">
                   {s.shortDesc}
                 </p>
-                <div className="mt-6 inline-flex w-fit items-center gap-2 rounded-md bg-brand-teal px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-white">
+
+                <div className="mt-8 inline-flex items-center gap-3 font-bold text-xs uppercase tracking-widest text-brand-teal border-b-2 border-brand-teal/20 pb-1 group-hover:border-brand-teal transition-all">
                   {s.ctaLabel}
-                  {s.price && <span>: {s.price}</span>}
-                  <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+                  {s.price && <span className="text-brand-navy/40">· {s.price}</span>}
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-2" />
                 </div>
               </Link>
             );
           })}
+        </div>
+      </section>
+
+      <section className="bg-muted/30 py-24">
+        <div className="mx-auto max-w-4xl px-6 text-center">
+          <h2 className="font-display text-3xl font-bold text-brand-navy mb-6">
+            Qual o melhor momento para começar?
+          </h2>
+          <p className="text-lg text-foreground/70 mb-10 leading-relaxed">
+            Cada processo foi desenhado para uma fase específica da sua jornada. Seja para um ajuste
+            pontual em uma sessão única ou uma reestruturação profunda em 10 encontros.
+          </p>
+          <a
+            href="https://julianagrimaldioficial.com.br/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-brand-teal font-bold uppercase tracking-widest text-sm hover:underline underline-offset-8"
+          >
+            Conheça a Metodologia Completa →
+          </a>
         </div>
       </section>
     </main>
