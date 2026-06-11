@@ -36,6 +36,7 @@ export const seoBySlug: Record<string, SeoMeta> = {
     serviceType: "Coaching de Carreira e Reestruturação Emocional",
     price: "2997",
     priceCurrency: "BRL",
+    ogImage: ogProtagonismo,
   },
   "desbloqueio-emocional": {
     title: "Desbloqueio Emocional: Relacionamentos e Dinheiro",
@@ -46,6 +47,7 @@ export const seoBySlug: Record<string, SeoMeta> = {
     serviceType: "Terapia de Reestruturação Emocional",
     price: "1997",
     priceCurrency: "BRL",
+    ogImage: ogDesbloqueio,
   },
   "diagnostico-emocional": {
     title: "Diagnóstico Emocional 1:1 — Sessão de 2h",
@@ -56,6 +58,7 @@ export const seoBySlug: Record<string, SeoMeta> = {
     serviceType: "Sessão de Diagnóstico Emocional",
     price: "397",
     priceCurrency: "BRL",
+    ogImage: ogDiagnostico,
   },
   "diario-emocional": {
     title: "Diário Emocional: Eu Me Percebendo — Ferramenta Guiada",
@@ -66,6 +69,7 @@ export const seoBySlug: Record<string, SeoMeta> = {
     serviceType: "Produto Digital — Ferramenta de Autoconhecimento",
     price: "97",
     priceCurrency: "BRL",
+    ogImage: ogDiario,
   },
   "autonomia-interna": {
     title: "Autonomia Interna: Diga Não Sem Culpa e Pare de se Esgotar",
@@ -74,6 +78,7 @@ export const seoBySlug: Record<string, SeoMeta> = {
     keywords:
       "autonomia interna, dizer não sem culpa, impor limites, esgotamento emocional, burnout feminino, autocuidado, priorizar a si mesma, limites saudáveis",
     serviceType: "Processo de Reestruturação Emocional",
+    ogImage: ogAutonomia,
   },
   "visibilidade-natural": {
     title: "Visibilidade Natural: Tenha Voz e Presença sem Performar",
@@ -82,6 +87,7 @@ export const seoBySlug: Record<string, SeoMeta> = {
     keywords:
       "visibilidade natural, ter voz no trabalho, presença executiva, autoridade feminina, silenciamento emocional, comunicação assertiva, expressão pessoal",
     serviceType: "Processo de Reestruturação Emocional",
+    ogImage: ogVisibilidade,
   },
 };
 
