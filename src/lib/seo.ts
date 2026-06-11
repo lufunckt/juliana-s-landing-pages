@@ -1,6 +1,13 @@
 // SEO metadata per landing page (PT-BR, keyword-optimized).
 // Title <60 chars, description <160 chars, keyword-rich Open Graph + JSON-LD.
 
+import ogProtagonismo from "@/assets/og-protagonismo.jpg";
+import ogDesbloqueio from "@/assets/og-desbloqueio.jpg";
+import ogDiagnostico from "@/assets/og-diagnostico.jpg";
+import ogDiario from "@/assets/og-diario.jpg";
+import ogAutonomia from "@/assets/og-autonomia.jpg";
+import ogVisibilidade from "@/assets/og-visibilidade.jpg";
+
 export type SeoMeta = {
   title: string;
   description: string;
@@ -29,6 +36,7 @@ export const seoBySlug: Record<string, SeoMeta> = {
     serviceType: "Coaching de Carreira e Reestruturação Emocional",
     price: "2997",
     priceCurrency: "BRL",
+    ogImage: ogProtagonismo,
   },
   "desbloqueio-emocional": {
     title: "Desbloqueio Emocional: Relacionamentos e Dinheiro",
@@ -39,6 +47,7 @@ export const seoBySlug: Record<string, SeoMeta> = {
     serviceType: "Terapia de Reestruturação Emocional",
     price: "1997",
     priceCurrency: "BRL",
+    ogImage: ogDesbloqueio,
   },
   "diagnostico-emocional": {
     title: "Diagnóstico Emocional 1:1 — Sessão de 2h",
@@ -49,6 +58,7 @@ export const seoBySlug: Record<string, SeoMeta> = {
     serviceType: "Sessão de Diagnóstico Emocional",
     price: "397",
     priceCurrency: "BRL",
+    ogImage: ogDiagnostico,
   },
   "diario-emocional": {
     title: "Diário Emocional: Eu Me Percebendo — Ferramenta Guiada",
@@ -59,6 +69,7 @@ export const seoBySlug: Record<string, SeoMeta> = {
     serviceType: "Produto Digital — Ferramenta de Autoconhecimento",
     price: "97",
     priceCurrency: "BRL",
+    ogImage: ogDiario,
   },
   "autonomia-interna": {
     title: "Autonomia Interna: Diga Não Sem Culpa e Pare de se Esgotar",
@@ -67,6 +78,7 @@ export const seoBySlug: Record<string, SeoMeta> = {
     keywords:
       "autonomia interna, dizer não sem culpa, impor limites, esgotamento emocional, burnout feminino, autocuidado, priorizar a si mesma, limites saudáveis",
     serviceType: "Processo de Reestruturação Emocional",
+    ogImage: ogAutonomia,
   },
   "visibilidade-natural": {
     title: "Visibilidade Natural: Tenha Voz e Presença sem Performar",
@@ -75,6 +87,7 @@ export const seoBySlug: Record<string, SeoMeta> = {
     keywords:
       "visibilidade natural, ter voz no trabalho, presença executiva, autoridade feminina, silenciamento emocional, comunicação assertiva, expressão pessoal",
     serviceType: "Processo de Reestruturação Emocional",
+    ogImage: ogVisibilidade,
   },
 };
 
@@ -100,6 +113,16 @@ export function buildHead(slug: string, path: string) {
     { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:title", content: fullTitle },
     { name: "twitter:description", content: seo.description },
+    ...(seo.ogImage
+      ? [
+          { property: "og:image", content: seo.ogImage },
+          { property: "og:image:width", content: "1216" },
+          { property: "og:image:height", content: "640" },
+          { property: "og:image:alt", content: seo.title },
+          { name: "twitter:image", content: seo.ogImage },
+          { name: "twitter:image:alt", content: seo.title },
+        ]
+      : []),
   ];
 
   const offers = seo.price
