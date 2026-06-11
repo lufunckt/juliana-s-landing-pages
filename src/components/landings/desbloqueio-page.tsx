@@ -25,7 +25,7 @@ export function DesbloqueioPage() {
         <div className="relative mx-auto max-w-7xl px-6 py-20 lg:grid lg:grid-cols-12 lg:gap-16 items-center">
           <div className="lg:col-span-7">
             <Link
-              to="/"
+              to="/LP/"
               className="inline-flex items-center text-xs font-semibold uppercase tracking-[0.25em] text-brand-teal hover:opacity-80 transition-all mb-8"
             >
               ← Todos os processos

@@ -17,7 +17,7 @@ export function AutonomiaPage() {
         <div className="relative mx-auto max-w-7xl px-6 py-20 md:grid md:grid-cols-2 md:gap-12 md:py-32 items-center">
           <div className="text-left">
             <Link
-              to="/"
+              to="/LP/"
               className="inline-flex items-center text-xs font-semibold uppercase tracking-[0.25em] text-brand-teal hover:opacity-80 transition-all mb-8"
             >
               ← Todos os processos

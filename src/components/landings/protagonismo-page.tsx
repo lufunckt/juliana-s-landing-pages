@@ -39,7 +39,7 @@ export function ProtagonismoPage() {
         <div className="relative mx-auto max-w-7xl px-6 py-20 lg:grid lg:grid-cols-2 lg:gap-16 items-center">
           <div>
             <Link
-              to="/"
+              to="/LP/"
               className="inline-flex items-center text-xs font-semibold uppercase tracking-[0.25em] text-brand-teal hover:opacity-80 transition-all mb-8"
             >
               ← Todos os processos

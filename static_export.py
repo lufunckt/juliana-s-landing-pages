@@ -55,13 +55,18 @@ for route in routes:
         f.write(html_template)
 
 # 4. Gerar .htaccess específico para subdiretório
+# Usando %{REQUEST_URI} para evitar conflitos e garantir que caia no index.html correto
 htaccess = f"""<IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase {sub_dir}
-  RewriteRule ^index\.html$ - [L]
-  RewriteCond %{{REQUEST_FILENAME}} !-f
-  RewriteCond %{{REQUEST_FILENAME}} !-d
-  RewriteRule . {sub_dir}index.html [L]
+
+  # Se o arquivo existe, serve ele
+  RewriteCond %{{REQUEST_FILENAME}} -f [OR]
+  RewriteCond %{{REQUEST_FILENAME}} -d
+  RewriteRule ^ - [L]
+
+  # Caso contrário, manda para o index.html da pasta LP
+  RewriteRule ^ {sub_dir}index.html [L]
 </IfModule>"""
 
 with open(os.path.join(client_dir, ".htaccess"), "w") as f:
