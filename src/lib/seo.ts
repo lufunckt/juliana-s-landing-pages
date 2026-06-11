@@ -1,6 +1,13 @@
 // SEO metadata per landing page (PT-BR, keyword-optimized).
 // Title <60 chars, description <160 chars, keyword-rich Open Graph + JSON-LD.
 
+import ogProtagonismo from "@/assets/og-protagonismo.jpg";
+import ogDesbloqueio from "@/assets/og-desbloqueio.jpg";
+import ogDiagnostico from "@/assets/og-diagnostico.jpg";
+import ogDiario from "@/assets/og-diario.jpg";
+import ogAutonomia from "@/assets/og-autonomia.jpg";
+import ogVisibilidade from "@/assets/og-visibilidade.jpg";
+
 export type SeoMeta = {
   title: string;
   description: string;
