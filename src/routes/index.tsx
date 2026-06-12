@@ -46,7 +46,7 @@ export const Route = createFileRoute("/")({
       },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "pt_BR" },
-      { property: "og:url", content: "/LP/" },
+      { property: "og:url", content: "https://julianagrimaldioficial.com.br/LP/" },
       { name: "twitter:card", content: "summary_large_image" },
       {
         name: "twitter:title",
