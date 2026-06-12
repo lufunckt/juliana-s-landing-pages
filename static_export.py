@@ -29,6 +29,7 @@ print(f"Usando CSS: {css_name}")
 print(f"Usando JS: {js_name}")
 
 # 2. Gerar index.html base com caminhos ajustados para o subdiretório
+# TanStack Start renders to <html> so we should just provide the script entry
 html_template = f"""<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -39,7 +40,6 @@ html_template = f"""<!DOCTYPE html>
   <link rel="stylesheet" href="{sub_dir}assets/{css_name}">
 </head>
 <body>
-  <div id="root"></div>
   <script type="module" src="{sub_dir}assets/{js_name}"></script>
 </body>
 </html>"""
