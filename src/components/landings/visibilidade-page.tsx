@@ -32,7 +32,7 @@ export function VisibilidadePage() {
           <>
             <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl relative z-10 border border-white/10">
               <img
-                src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=1000"
+                src={ogVisibilidade}
                 alt="Voice and Presence"
                 className="w-full h-full object-cover mix-blend-luminosity hover:mix-blend-normal transition-all duration-700"
               />

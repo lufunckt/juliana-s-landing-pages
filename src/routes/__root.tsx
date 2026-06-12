@@ -105,7 +105,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           jobTitle: "Especialista em Reestruturação Emocional",
           description:
             "Especialista em reestruturação emocional baseada em neurociência comportamental.",
-          url: "/",
+          url: "https://julianagrimaldioficial.com.br/LP/",
           knowsAbout: [
             "Neurociência comportamental",
             "Reconsolidação de memória",

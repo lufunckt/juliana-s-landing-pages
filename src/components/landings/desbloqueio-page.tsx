@@ -42,7 +42,7 @@ export function DesbloqueioPage() {
           <>
             <div className="aspect-[3/4] rounded-2xl overflow-hidden bg-brand-navy-deep/50 border border-white/10 shadow-2xl relative z-10">
               <img
-                src="https://images.unsplash.com/photo-1516589174184-c6852651428c?auto=format&fit=crop&q=80&w=800"
+                src={ogDesbloqueio}
                 alt="Desbloqueio Emocional"
                 className="w-full h-full object-cover opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-700"
               />

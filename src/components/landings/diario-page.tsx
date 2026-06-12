@@ -1,4 +1,6 @@
-import { BookOpen, Sunrise, Moon, Eye, Sparkles } from "lucide-react";
+import ogDiario from "@/assets/og-diario.jpg";
+import { Link } from "@tanstack/react-router";
+import { ArrowRight, BookOpen, Sunrise, Moon, Eye, Sparkles } from "lucide-react";
 
 import {
   Eyebrow,

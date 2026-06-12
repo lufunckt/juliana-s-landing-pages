@@ -58,7 +58,7 @@ export function ProtagonismoPage() {
           <>
             <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl relative z-10 border border-white/10">
               <img
-                src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80&w=1000"
+                src={ogProtagonismo}
                 alt="Professional Growth"
                 className="w-full h-full object-cover mix-blend-luminosity hover:mix-blend-normal transition-all duration-700"
               />
