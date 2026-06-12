@@ -53,7 +53,7 @@ export const Route = createFileRoute("/")({
         content: "Juliana Grimaldi — 6 Processos de Reestruturação Emocional",
       },
     ],
-    links: [{ rel: "canonical", href: "/LP/" }],
+    links: [{ rel: "canonical", href: "https://julianagrimaldioficial.com.br/LP/" }],
   }),
   component: HubPage,
 });
