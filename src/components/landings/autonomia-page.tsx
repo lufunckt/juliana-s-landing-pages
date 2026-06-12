@@ -1,3 +1,4 @@
+import ogAutonomia from "@/assets/og-autonomia.jpg";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Wind, CheckCircle2 } from "lucide-react";
 
@@ -17,7 +18,7 @@ export function AutonomiaPage() {
         <div className="relative mx-auto max-w-7xl px-6 py-20 md:grid md:grid-cols-2 md:gap-12 md:py-32 items-center">
           <div className="text-left">
             <Link
-              to="/LP/"
+              to="/"
               className="inline-flex items-center text-xs font-semibold uppercase tracking-[0.25em] text-brand-teal hover:opacity-80 transition-all mb-8"
             >
               ← Todos os processos
@@ -60,7 +61,7 @@ export function AutonomiaPage() {
                 <p className="text-sm uppercase tracking-widest">Espaço para sua imagem</p>
               </div>
               <img
-                src="/src/assets/og-autonomia.jpg"
+                src={ogAutonomia}
                 alt="Autonomia Interna"
                 className="w-full h-full object-cover opacity-60 mix-blend-luminosity hover:mix-blend-normal transition-all duration-700"
               />

@@ -1,3 +1,4 @@
+import ogDiario from "@/assets/og-diario.jpg";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, BookOpen, Sunrise, Moon, Eye, Sparkles } from "lucide-react";
 
@@ -15,7 +16,7 @@ export function DiarioPage() {
         <div className="relative mx-auto max-w-7xl px-6 py-20 lg:grid lg:grid-cols-2 lg:gap-16 items-center">
           <div>
             <Link
-              to="/LP/"
+              to="/"
               className="inline-flex items-center text-xs font-semibold uppercase tracking-[0.25em] text-brand-teal hover:opacity-80 transition-all mb-8"
             >
               ← Todos os processos
@@ -190,7 +191,7 @@ export function DiarioPage() {
               <div className="relative">
                 <div className="aspect-[16/10] rounded-3xl overflow-hidden shadow-2xl">
                   <img
-                    src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=1200"
+                    src={ogDiario}
                     className="w-full h-full object-cover"
                     alt="Focus"
                   />

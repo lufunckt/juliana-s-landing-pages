@@ -1,3 +1,4 @@
+import ogProtagonismo from "@/assets/og-protagonismo.jpg";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Check, Briefcase, TrendingUp, UserCheck, ShieldCheck } from "lucide-react";
 
@@ -39,7 +40,7 @@ export function ProtagonismoPage() {
         <div className="relative mx-auto max-w-7xl px-6 py-20 lg:grid lg:grid-cols-2 lg:gap-16 items-center">
           <div>
             <Link
-              to="/LP/"
+              to="/"
               className="inline-flex items-center text-xs font-semibold uppercase tracking-[0.25em] text-brand-teal hover:opacity-80 transition-all mb-8"
             >
               ← Todos os processos
@@ -78,7 +79,7 @@ export function ProtagonismoPage() {
           <div className="mt-16 lg:mt-0 relative">
             <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl relative z-10 border border-white/10">
               <img
-                src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80&w=1000"
+                src={ogProtagonismo}
                 alt="Professional Growth"
                 className="w-full h-full object-cover mix-blend-luminosity hover:mix-blend-normal transition-all duration-700"
               />

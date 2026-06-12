@@ -55,7 +55,6 @@ for route in routes:
         f.write(html_template)
 
 # 4. Gerar .htaccess específico para subdiretório
-# Usando %{REQUEST_URI} para evitar conflitos e garantir que caia no index.html correto
 htaccess = f"""<IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase {sub_dir}

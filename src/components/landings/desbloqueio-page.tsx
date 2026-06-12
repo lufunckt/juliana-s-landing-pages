@@ -1,3 +1,4 @@
+import ogDesbloqueio from "@/assets/og-desbloqueio.jpg";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Check, Sparkles, Brain } from "lucide-react";
 
@@ -25,7 +26,7 @@ export function DesbloqueioPage() {
         <div className="relative mx-auto max-w-7xl px-6 py-20 lg:grid lg:grid-cols-12 lg:gap-16 items-center">
           <div className="lg:col-span-7">
             <Link
-              to="/LP/"
+              to="/"
               className="inline-flex items-center text-xs font-semibold uppercase tracking-[0.25em] text-brand-teal hover:opacity-80 transition-all mb-8"
             >
               ← Todos os processos
@@ -56,7 +57,7 @@ export function DesbloqueioPage() {
           <div className="mt-16 lg:mt-0 lg:col-span-5 relative">
             <div className="aspect-[3/4] rounded-2xl overflow-hidden bg-brand-navy-deep/50 border border-white/10 shadow-2xl relative z-10">
               <img
-                src="https://images.unsplash.com/photo-1516589174184-c6852651428c?auto=format&fit=crop&q=80&w=800"
+                src={ogDesbloqueio}
                 alt="Desbloqueio Emocional"
                 className="w-full h-full object-cover opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-700"
               />

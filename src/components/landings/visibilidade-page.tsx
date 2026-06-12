@@ -1,3 +1,4 @@
+import ogVisibilidade from "@/assets/og-visibilidade.jpg";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Mic, Volume2, Sparkles } from "lucide-react";
 
@@ -15,7 +16,7 @@ export function VisibilidadePage() {
         <div className="relative mx-auto max-w-7xl px-6 py-20 lg:grid lg:grid-cols-2 lg:gap-16 items-center">
           <div>
             <Link
-              to="/LP/"
+              to="/"
               className="inline-flex items-center text-xs font-semibold uppercase tracking-[0.25em] text-brand-teal hover:opacity-80 transition-all mb-8"
             >
               ← Todos os processos
@@ -46,7 +47,7 @@ export function VisibilidadePage() {
           <div className="mt-16 lg:mt-0 relative">
             <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl relative z-10 border border-white/10">
               <img
-                src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=1000"
+                src={ogVisibilidade}
                 alt="Voice and Presence"
                 className="w-full h-full object-cover mix-blend-luminosity hover:mix-blend-normal transition-all duration-700"
               />

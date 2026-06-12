@@ -1,3 +1,4 @@
+import ogDiagnostico from "@/assets/og-diagnostico.jpg";
 import { Link } from "@tanstack/react-router";
 import {
   ArrowRight,
@@ -23,7 +24,7 @@ export function DiagnosticoPage() {
         <div className="relative mx-auto max-w-7xl px-6 py-20 lg:grid lg:grid-cols-2 lg:gap-20 items-center">
           <div>
             <Link
-              to="/LP/"
+              to="/"
               className="inline-flex items-center text-xs font-semibold uppercase tracking-[0.25em] text-brand-teal hover:opacity-80 transition-all mb-8"
             >
               ← Todos os processos
@@ -144,7 +145,7 @@ export function DiagnosticoPage() {
               <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl relative">
                 <div className="absolute inset-0 bg-brand-navy/20 z-10" />
                 <img
-                  src="https://images.unsplash.com/photo-1454165833767-027ffea9e772?auto=format&fit=crop&q=80&w=800"
+                  src={ogDiagnostico}
                   className="w-full h-full object-cover mix-blend-luminosity"
                   alt="Diagnóstico"
                 />
