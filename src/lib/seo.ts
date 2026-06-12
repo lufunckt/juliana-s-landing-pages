@@ -23,7 +23,7 @@ export const PROVIDER = {
   "@type": "Person",
   name: "Juliana Grimaldi",
   jobTitle: "Especialista em Reestruturação Emocional",
-  url: "/LP/",
+  url: "https://julianagrimaldioficial.com.br/LP/",
 } as const;
 
 export const seoBySlug: Record<string, SeoMeta> = {
